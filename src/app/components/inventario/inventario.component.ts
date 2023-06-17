@@ -41,9 +41,17 @@ export class InventarioComponent implements OnInit {
     )
 
   }
+
   applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
+    this.dataSource.filter = filterValue;
+
+    this.dataSource.filterPredicate = (data: Stock, filter: string) => {
+      const searchData = filter.toLowerCase();
+      const product = data.product;
+
+      return (product.productName.toLowerCase().includes(searchData));
+    };
   }
 
   deleteStock(id: number):void{
@@ -57,7 +65,7 @@ export class InventarioComponent implements OnInit {
       }
     })
   }
-  
+
   exportExcel(){
     this.stockService.exportStocks(this.idStore).subscribe(
         (data: any) => {
@@ -75,5 +83,5 @@ export class InventarioComponent implements OnInit {
         }
     );
   }
-  
+
 }
