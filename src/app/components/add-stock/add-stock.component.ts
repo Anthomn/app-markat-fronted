@@ -36,12 +36,21 @@ export class AddStockComponent implements OnInit {
   stock!: Stock;
   formProduct!: FormGroup;
   abrir = false;
-  validateProducto!: boolean;
+
+  minDate: Date;
 
 
   constructor(private formBuilder: FormBuilder,
-    private activated: ActivatedRoute, private productoService: ProductosService,
-    private stockService: StocksService, private router: Router, private snack: MatSnackBar) { }
+              private activated: ActivatedRoute, private productoService: ProductosService,
+              private stockService: StocksService, private router: Router, private snack: MatSnackBar) {
+
+    /*Correcciones*/
+    const currentYear = new Date().getFullYear();
+    const currentDay = new Date().getDay();
+    const currentMonth = new Date().getMonth();
+
+    this.minDate = new Date(currentYear, currentMonth, currentDay + 12);
+  }
 
   ngOnInit(): void {
     this.id = this.activated.snapshot.params['id'];
@@ -51,16 +60,15 @@ export class AddStockComponent implements OnInit {
     this.reactiveForm();
     this.getProductos();
     this.loadFormProduct();
-    this.validateProducto = false;
   }
 
   loadFormProduct() {
     this.formProduct = this.formBuilder.group(
       {
-        productoNombre: ['', [Validators.required, Validators.pattern('[a-zA-Z]+')]],
-        productoMarca: ['', [Validators.required, Validators.pattern('[a-zA-Z]+')]],
-        productoDescripcion: ['', [Validators.required, Validators.pattern('[a-zA-Z]+')]],
-        productoImg: ['', [Validators.required, Validators.pattern('^(?!\s).+(?<!\s)$')]]
+        productoNombre: ['', [Validators.required]],
+        productoMarca: ['', [Validators.required]],
+        productoDescripcion: ['', [Validators.required]],
+        productoImg: ['', [Validators.required]]
       }
 
     )
@@ -81,7 +89,6 @@ export class AddStockComponent implements OnInit {
   }
   conseguirProducto(data: any) {
     this.producto = data;
-    this.validateProducto = true;
   }
   insertarProducto() {
     let suplier: Supplier = {
@@ -152,19 +159,15 @@ export class AddStockComponent implements OnInit {
       store: _store
 
     }
-    
-    if(stock.product.id != null)
-    {
-      this.validateProducto = true;
-      this.stockService.addStock(stock).subscribe({
+
+    this.stockService.addStock(stock).subscribe({
+
       next: (data: Stock) => {
-        this.router.navigate(['dashboard/'+this.id+'/inventario']);
+        // console.log('aÃ±adiendo stock: ', data);
+        this.router.navigate(['dashboard/' + this.id + '/inventario']);
       },
       error: e => console.log('error venta: ' + e)
     });
-    }else{
-      this.validateProducto = false;
-    }
 
   }
 }
