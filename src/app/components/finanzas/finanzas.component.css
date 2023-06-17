@@ -1,0 +1,35 @@
+
+.container{
+    min-height: 88vh;
+    padding: 0;
+}
+
+.titulo{
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-color: #000;
+}
+ 
+
+.col #centro{
+    text-align: center;
+}
+
+
+.fila{
+    min-height: 44vh;
+}
+
+.contenido{
+    margin-top: 30px;
+}
+
+.contenido_2{
+    margin-top: 20px;
+}
+
+.person-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}

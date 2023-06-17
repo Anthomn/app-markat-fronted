@@ -1,0 +1,32 @@
+.bg{
+  background-color: #5800FF;
+}
+
+
+.enlace:hover{
+  font-weight: bolder;
+  font-size:larger;
+  transition-duration: 1.5s;
+}
+
+.logo{
+  width: 15%;
+}
+
+.font-700{
+  font-size: 30px;
+}
+.font-700_Michael{
+  font-weight: bolder;
+  font-size: 15px;
+}
+
+.perfil{
+  border-radius: 50%;
+  width: 9%;
+  
+}
+.mx-3{
+  color: #FFF;
+  text-decoration: none;
+}

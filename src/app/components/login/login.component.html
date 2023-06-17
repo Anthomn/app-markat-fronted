@@ -1,0 +1,104 @@
+<div class="container-fluid">
+  <div class="row g-0">
+    <div
+      class="col d-flex justify-content-center align-items-center px-5"
+      id="rec-1"
+    >
+      <img
+        class="img-fluid"
+        id="img_logo"
+        src="../../../assets/img/markat.jpg"
+        alt="logo"
+      />
+    </div>
+
+    <div class="col px-5" id="rec-2">
+      <br />
+      <br /><br /><br /><br />
+      <br />
+      <br />
+      <div class="px-5">
+        <h2 class="text-left py-5">Acceda a su cuenta</h2>
+
+        <form [formGroup]="myform">
+          <mat-form-field appearance="standard" class="w-50 mb-0">
+            <mat-label class="font-lighter">Correo electrónico</mat-label>
+            <input
+              matInput
+              formControlName="email"
+              placeholder="Ingrese su correo"
+            />
+          </mat-form-field>
+          <br />
+
+          <mat-form-field appearance="standard" class="w-50 mb-0">
+            <mat-label>Ingresé su contraseña</mat-label>
+            <input
+              matInput
+              [type]="hide ? 'password' : 'text'"
+              formControlName="password"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <div *ngIf="!esValido" class="alert alert-danger" role="alert">
+            El correo o contraseña son incorrectos.
+          </div>
+
+          <div class="text-end w-50">
+            <button
+              mat-raised-button
+              id="btn-ingresar"
+              (click)="verificarUsuario()"
+              class="font-lighter w-50"
+            >
+              Ingresar
+            </button>
+          </div>
+        </form>
+        <br /><br /><br /><br />
+        <br /><br /><br /><br />
+        <br /><br /><br /><br />
+
+        <div class="row lign-items-end">
+          <div class="col">
+            <p class="d-inline-block mb-0 text-primary font-300">
+              ¿No tienes una cuenta?
+            </p>
+            <a
+              class="font-weight-bold text-decoration-none font-700"
+              routerLink="/register"
+            >
+              Registrarse</a
+            >
+          </div>
+          <div class="py-2 mb-0">
+            <p class="d-inline-block mb-0 font-300 text-primary">
+              ¿Olvidaste tu contraseña?
+            </p>
+            <a
+              class="font-weight-bold text-decoration-none font-700"
+              routerLink="/recover-pw"
+            >
+              Recuperar mi contraseña</a
+            >
+          </div>
+
+          <div class="py-2 mb-0">
+            <p class="d-inline-block mb-0 font-300 text-secondary">
+              © copyright 2022 | Todos los derechos reservados por Markat, Inc.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+.example-container .mat-radio-button {
+    margin: 0 12px;
+}
+
+#button {
+    background-color: #0CA789;
+    color: white;
+}
+
+#btn-delete {
+    background-color: red;
+    color: white;
+}
+
+.capa {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle {
+    width: 400px;
+    height: auto;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 20px;
+}

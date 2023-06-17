@@ -1,0 +1,189 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+</head>
+
+<body>
+
+    <app-nav-landing></app-nav-landing>
+
+  <section class="home" id="home">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="content">
+            <br />
+            <br />
+            <h3 id="text-home-1">
+              HAZ CRECER TUS VENTAS CON
+              <span id="text-home-2"> LAS HERRAMIENTAS DE Markat</span>
+            </h3>
+            <p>
+              Lleva un mejor control de tu negocio administrando en una sola
+              plataforma tus finanzas, inventario, ventas y clientes.
+            </p>
+            <a href="#" class="btn btn-home" routerLink="/register"
+              >Registrarse</a
+            >
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="image">
+            <img
+              src="../../../assets/img-landing/home-img.png"
+              alt=""
+              class="img-fluid p-5"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h1 class="heading">¿Qué es Markat?</h1>
+
+    <div class="column">
+      <div class="image" data-aos="fade-right">
+        <img src="../../../assets/img-landing/about-img.png" alt="" />
+      </div>
+
+      <div class="content">
+        <h3>¿Quieres un mejor control de tu negocio y aumentar tus ventas?</h3>
+        <p>
+          Markat es una aplicación web que te permite controlar tu negocio por
+          medio de las herramientas de gestión de inventario, finanzas y ventas.
+          Podrás generar boletas electrónicas y brindar crédito a tus clientes
+          más fieles. Además, tus decisiones mejoraran gracias al resumen de
+          datos mensuales.
+        </p>
+        <div class="buttons">
+          <a href="#" class="btn" routerLink="/register">Comienza ahora</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="beneficios">
+    <h1 class="heading">Beneficios</h1>
+
+    <div class="box-container">
+      <div class="box" data-aos="fade-right">
+        <img src="../../../assets/img-landing/registrar-bene.png" alt="" />
+        <h3>Registra a tus clientes</h3>
+      </div>
+
+      <div class="box">
+        <img src="../../../assets/img-landing/creditos-bene.png" alt="" />
+        <h3>Brinda tus propios créditos</h3>
+      </div>
+
+      <div class="box" data-aos="fade-left">
+        <img src="../../../assets/img-landing/finanzas-bene.png" alt="" />
+        <h3>Analiza tus finanzas</h3>
+      </div>
+      <div class="box" data-aos="fade-right">
+        <img src="../../../assets/img-landing/boletas-bene.png" alt="" />
+        <h3>Boletas electrónicas por tus ventas</h3>
+      </div>
+
+      <div class="box">
+        <img src="../../../assets/img-landing/inventario-bene.png" alt="" />
+        <h3>Mejora el control de inventario</h3>
+      </div>
+    </div>
+  </section>
+  <br />
+  <br />
+  <br />
+  <section class="contact" id="contact">
+    <div class="image" data-aos="fade-right">
+      <img src="../../../assets/img-landing/contact-img.png" alt="" />
+    </div>
+
+    <form action="">
+      <h1 class="heading">Contactanos</h1>
+
+      <div class="inputBox">
+        <input type="text" required />
+        <label>Nombre</label>
+      </div>
+
+      <div class="inputBox">
+        <input type="email" required />
+        <label>Correo</label>
+      </div>
+
+      <div class="inputBox">
+        <input type="number" required />
+        <label>Telefono</label>
+      </div>
+
+      <div class="inputBox">
+        <textarea required name="" id="" cols="30" rows="10"></textarea>
+        <label>Mensaje</label>
+      </div>
+
+      <input type="submit" class="btn" value="Enviar mensaje" />
+    </form>
+  </section>
+
+  <div class="footer" id="footer">
+    <div class="box-container">
+      <div class="box">
+        <h3>Sobre nosotros</h3>
+        <p>
+          Somos una StartUp que buscamos que los negocios pequeños aumenten sus
+          ventas con herramientas que simplifiquen sus procesos.
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Accesos rapidos</h3>
+        <a href="#home">Inicio</a>
+        <a href="#about">¿Qué es Markat</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#contact">Contacto</a>
+      </div>
+
+      <div class="box">
+        <h3>Redes Sociales</h3>
+        <a href="#footer">Facebook</a>
+        <a href="#footer">Instagram</a>
+        <a href="#footer">Twitter</a>
+      </div>
+
+      <div class="box">
+        <h3>Contacto</h3>
+        <div class="info">
+          <p>
+            +51 938-123-765<br />
+            +51 956-234-765
+          </p>
+        </div>
+        <div class="info">
+          <p>
+            service@markat.com <br />
+            contacto@markat.com
+          </p>
+        </div>
+        <div class="info">
+          <p>Lima, Peru</p>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="credit">
+      &copy; copyright 2022 | Todos los derechos reservados por Markat, Inc.
+    </h1>
+  </div>
+
+  <script src="./assets/scripts/main.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init();
+  </script>
+</body>

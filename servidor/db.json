@@ -1,0 +1,258 @@
+{
+  "Bodegueros": [
+    {
+      "id": 1,
+      "nombre": "Michael",
+      "apellido": "Rodriguez",
+      "correo": "michael@gmail.com",
+      "contraseña": "upc123",
+      "nnegocio": "El Rey",
+      "ruc": "1060364594",
+      "foto": "https://i.postimg.cc/GpMdb6RN/bodeguero.png"
+    },
+    {
+      "id": 2,
+      "nombre": "Carmen",
+      "apellido": "Lopez",
+      "correo": "carmen@gmail.com",
+      "contraseña": "upc123",
+      "nnegocio": "Camuchita",
+      "ruc": "1060364594",
+      "foto": "https://i.postimg.cc/PrMMQmnw/GG7-UKCD765-AWHNGZOADI6-TQTL4.jpg"
+    }
+  ],
+  "Productos": [
+    {
+      "id": 1,
+      "nombre": "Leche",
+      "marca": "Gloria",
+      "descripcion": "200g",
+      "img": "https://wongfood.vteximg.com.br/arquivos/ids/363948-750-750/59521001-01-65.jpg?v=637279704140170000",
+      "precio": "3.5",
+      "stock": 400
+    },
+    {
+      "id": 2,
+      "nombre": "Fideos",
+      "marca": "Molitalia",
+      "descripcion": "400g",
+      "img": "https://www.molitalia.com.pe/wp-content/uploads/2020/09/3D-MOLITALIA-TALLARIN.jpg",
+      "precio": 12,
+      "stock": 400
+    },
+    {
+      "id": 3,
+      "nombre": "Agua",
+      "marca": "Cielo",
+      "descripcion": "2.5 litros",
+      "img": "https://www.ajegroup.com/wp-content/uploads/2020/05/colombia-cielo.jpg",
+      "precio": "4",
+      "stock": "1"
+    },
+    {
+      "id": 4,
+      "nombre": "Atun",
+      "marca": "Gloria",
+      "descripcion": "200g",
+      "img": "https://plazavea.vteximg.com.br/arquivos/ids/6876866-1000-1000/20124082.jpg",
+      "precio": "2.5",
+      "stock": "3"
+    },
+    {
+      "id": 5,
+      "nombre": "Arroz",
+      "marca": "Costeño",
+      "descripcion": "5kg",
+      "img": "https://plazavea.vteximg.com.br/arquivos/ids/554165-1000-1000/641425.jpg?v=637426577652870000",
+      "precio": "21.9",
+      "stock": "3"
+    },
+    {
+      "id": 6,
+      "nombre": "Harina",
+      "marca": "Blanca Flor",
+      "descripcion": "1kg",
+      "img": "https://plazavea.vteximg.com.br/arquivos/ids/13930278-1000-1000/680-1.jpg",
+      "precio": "8",
+      "stock": "3"
+    },
+    {
+      "id": 7,
+      "nombre": "Arroz",
+      "marca": "Bells",
+      "descripcion": "5kg",
+      "img": "https://plazavea.vteximg.com.br/arquivos/ids/414996-1000-1000/20198553.jpg",
+      "precio": "20",
+      "stock": "5"
+    },
+    {
+      "id": 8,
+      "nombre": "Huevo",
+      "marca": "La Calera",
+      "descripcion": "1kg",
+      "img": "https://e39a9f00db6c5bc097f9-75bc5dce1d64f93372e7c97ed35869cb.ssl.cf1.rackcdn.com/img-vaT3M2VX.jpg",
+      "precio": "14",
+      "stock": "7"
+    },
+    {
+      "id": 9,
+      "nombre": "Mantequilla",
+      "marca": "Laive",
+      "descripcion": "180g",
+      "img": "http://laive.pe/wp-content/uploads/2015/07/WEB-225x420-px-Barra100g.png",
+      "precio": "10",
+      "stock": "7"
+    },
+    {
+      "id": 10,
+      "nombre": "Yogurt",
+      "marca": "Laive",
+      "descripcion": "340gr",
+      "img": "https://vegaperu.vtexassets.com/arquivos/ids/159174/7750151005548.jpg?v=637660223633330000",
+      "precio": "3",
+      "stock": "12"
+    },
+    {
+      "id": 11,
+      "nombre": "Queso",
+      "marca": "Braedt",
+      "descripcion": "200g",
+      "img": "https://vivanda.vtexassets.com/arquivos/ids/285638-800-450?v=637665802235200000&width=800&height=450&aspect=true",
+      "precio": "12",
+      "stock": "15"
+    },
+    {
+      "id": 12,
+      "nombre": "Jamon",
+      "marca": "Braedt",
+      "descripcion": "200g",
+      "img": "https://plazavea.vteximg.com.br/arquivos/ids/620401-450-450/20170942.jpg?v=637442647222800000",
+      "precio": "12.5",
+      "stock": "10"
+    }
+  ],
+  "Ventas": [
+    {
+      "id": 1,
+      "cliente": "Slowly Gonzáles Perez",
+      "productos": "Leche - Gloria, Fideos - Gloria",
+      "precioTotal": 41.5,
+      "credito": "Si",
+      "fechaVenta": "07/10/2022"
+    },
+    {
+      "id": 2,
+      "cliente": "Marle Lazaro Guevara",
+      "productos": "Agua - Cielo, Harina - Blanca Flor, Arroz - Bells",
+      "precioTotal": 40.4,
+      "credito": "Si",
+      "fechaVenta": "08/10/2022"
+    },
+    {
+      "id": 3,
+      "cliente": "Luis Ochoa Dual",
+      "productos": "Huevo - La Calera, Arroz - Costeño, Fideos - Molitalia, Atun - Gloria",
+      "precioTotal": 50.4,
+      "credito": "Si",
+      "fechaVenta": "08/10/2022"
+    },
+    {
+      "id": 4,
+      "cliente": "Mauricio Lopez Soto",
+      "productos": "Agua - Cielo, Leche - Gloria",
+      "precioTotal": 12.5,
+      "credito": "No",
+      "fechaVenta": "09/10/2022"
+    },
+    {
+      "id": 5,
+      "cliente": "Sara Mendoza Gomez",
+      "productos": "Fideos - Molitalia, Huevo - La Calera,  Harina - Blanca Flor",
+      "precioTotal": 46,
+      "credito": "No",
+      "fechaVenta": "09/10/2022"
+    }
+  ],
+  "Cliente": [
+    {
+      "id": 1,
+      "nombre": "Lucho Gonzales",
+      "dni": "74562215",
+      "creditos": "100",
+      "total_gastado": "80",
+      "status_morosidad": "No es moroso",
+      "fecha_pago": "28/10/2022",
+      "img":"https://i.postimg.cc/jSZxGqxv/19-cosas-que-hacen-todos-los-sennores-2-9353-1489507406-3-dblbig.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "Jesus Sideral",
+      "dni": 12312333,
+      "creditos": 2500,
+      "total_gastado": 180,
+      "status_morosidad": "No es moroso",
+      "fecha_pago": "15/11/2022",
+      "img":"https://i.postimg.cc/x1Rh9wJ4/LJ2i-INqn-400x400.jpg"
+    },
+    {
+      "id": 3,
+      "nombre": "Pablo Cueva",
+      "dni": "41655573",
+      "creditos": 100,
+      "total_gastado": 95,
+      "status_morosidad": "No es moroso",
+      "fecha_pago": "20/11/2022",
+      "img":"https://i.postimg.cc/x1Rh9wJ4/LJ2i-INqn-400x400.jpg"
+    },
+    {
+      "id": 4,
+      "nombre": "Maria Salazar",
+      "dni": "26752433",
+      "creditos": 90,
+      "total_gastado": 60,
+      "status_morosidad": "es moroso",
+      "fecha_pago": "10/10/2022",
+      "img":"https://i.postimg.cc/x1Rh9wJ4/LJ2i-INqn-400x400.jpg"
+    },
+    {
+      "id": 5,
+      "nombre": "Luis Carvajal",
+      "dni": "74621533",
+      "creditos": 100,
+      "total_gastado": 96,
+      "status_morosidad": "es moroso",
+      "fecha_pago": "7/10/2022",
+      "img":"https://i.postimg.cc/x1Rh9wJ4/LJ2i-INqn-400x400.jpg"
+    },
+    {
+      "id": 6,
+      "nombre": "Sebastian Argon",
+      "dni": 31233456,
+      "creditos": 1200,
+      "total_gastado": 100,
+      "status_morosidad": "No es moroso",
+      "fecha_pago": "16/11/2022",
+      "img":"https://i.postimg.cc/x1Rh9wJ4/LJ2i-INqn-400x400.jpg"
+    },
+    {
+      "id": 7,
+      "nombre": "Sully Peña",
+      "dni": "76432253",
+      "creditos": 80,
+      "total_gastado": 20,
+      "status_morosidad": "No es moroso",
+      "fecha_pago": "20/11/2022",
+      "img":"https://i.postimg.cc/x1Rh9wJ4/LJ2i-INqn-400x400.jpg"
+    },
+    {
+      "id": 8,
+      "nombre": "Leo Quispe",
+      "dni": "46312546",
+      "creditos": 150,
+      "total_gastado": 130,
+      "status_morosidad": "No es moroso",
+      "fecha_pago": "19/11/2022",
+      "img":"https://i.postimg.cc/x1Rh9wJ4/LJ2i-INqn-400x400.jpg"
+    }
+  ]
+}

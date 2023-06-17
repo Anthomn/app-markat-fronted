@@ -1,0 +1,150 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+
+  <div class="d-flex justify-content-between">
+    <h4>Stock | Añadir</h4>
+    <button mat-raised-button color="primary" (click)="_abrir()">Añadir producto</button>
+  </div>
+  <br />
+  <br />
+  <div>
+    <form [formGroup]="myform">
+      <h5>Detalles del inventario</h5>
+      <div class="card py-4 px-2">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h6>Fecha de expiracion</h6>
+              <mat-form-field appearance="standard" class="w-100">
+                <mat-label>Seleccione una fecha</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="dateExpiration" />
+                <mat-hint>MM/DD/AAAA</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker">
+                </mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              <br />
+              <br />
+              <br />
+              <h6>Fecha de compra</h6>
+              <mat-form-field appearance="standard" class="w-100">
+                <mat-label>Seleccione una fecha</mat-label>
+                <input matInput [matDatepicker]="picker2" formControlName="dateShopping" />
+                <mat-hint>MM/DD/AAAA</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker2">
+                </mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <h5>Añadir producto a la lista</h5>
+      <div class="card py-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <mat-form-field class="example-full-width" appearance="standard" class="w-100">
+                <mat-label>Nombre del producto</mat-label>
+                <input type="text" placeholder="Escribe el nombre del producto" matInput [formControl]="myControl"
+                  [matAutocomplete]="auto" />
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let option of filteredOptions | async" [value]="option.productName">
+                    <div (click)="conseguirProducto(option)">
+                      {{ option.productName }}
+                    </div>
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <mat-form-field appearance="standard" class="w-100">
+                      <mat-label>Cantidad</mat-label>
+                      <input matInput placeholder="Cantidad del producto.." formControlName="noUnits" type="number" />
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-4">
+                    <mat-form-field appearance="standard" class="w-100">
+                      <mat-label>Precio Compra (S/.)</mat-label>
+                      <input matInput placeholder="S/. 1.20" formControlName="pricePerUnit" type="number" />
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+
+      <div *ngIf="(myform.get('dateExpiration')?.hasError('required') && myform.get('dateExpiration')?.touched)  || 
+      (myform.get('dateShopping')?.hasError('required') && myform.get('dateShopping')?.touched) ||
+      (myform.get('noUnits')?.hasError('required') && myform.get('noUnits')?.touched) ||
+      (myform.get('pricePerUnit')?.hasError('required') && myform.get('pricePerUnit')?.touched) ">
+        <span class="text-danger">Completar campos</span>
+      </div>
+
+      <div *ngIf="!validateProducto" class="alert alert-warning" role="alert">
+        Debe seleccionar un producto de la lista.
+      </div>
+
+      <div class="my-4 d-flex justify-content-between">
+        <div>
+          <button mat-raised-button id="btn-delete" class="me-4" routerLink="/dashboard/{{ id }}/inventario">
+            Cancelar
+          </button>
+          <button mat-raised-button id="button" mat-raised-button [disabled]="myform.invalid" (click)="addStock()">
+            Guardar
+          </button>
+        </div>
+      </div>
+      <br />
+    </form>
+  </div>
+  <div class="capa" *ngIf="abrir">
+    <div class="toggle">
+      <div class="d-flex justify-content-between">
+        <h4 class="text-center">Agregar producto</h4> 
+        <button class="btn" (click)="close()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <form [formGroup]="formProduct">
+        <mat-form-field appearance="standard" class="w-100">
+          <mat-label>Nombre del producto</mat-label>
+          <input matInput placeholder="Nombre del producto.." formControlName="productoNombre" />
+        </mat-form-field>
+        <mat-form-field appearance="standard" class="w-100">
+          <mat-label>Marca</mat-label>
+          <input matInput placeholder="Marca del producto.." formControlName="productoMarca" />
+        </mat-form-field>
+        <mat-form-field appearance="standard" class="w-100">
+          <mat-label>Descripción</mat-label>
+          <input matInput placeholder="Marca del producto.." formControlName="productoDescripcion" />
+        </mat-form-field>
+        <mat-form-field appearance="standard" class="w-100">
+          <mat-label>Imagen (URL)</mat-label>
+          <input matInput placeholder="url de la imagen.." formControlName="productoImg" />
+        </mat-form-field>
+
+        <div *ngIf="(formProduct.get('productoNombre')?.hasError('required') && formProduct.get('productoNombre')?.touched)  || 
+        (formProduct.get('productoMarca')?.hasError('required') && formProduct.get('productoMarca')?.touched) ||
+        (formProduct.get('productoDescripcion')?.hasError('required') && formProduct.get('productoDescripcion')?.touched) ||
+        (formProduct.get('productoImg')?.hasError('required') && formProduct.get('productoImg')?.touched) ">
+          <span class="text-danger">¡“No puedes dejar campos vacíos!”</span>
+        </div>
+
+        <div class="d-flex justify-content-between">
+          <button mat-raised-button color="warn" (click)="close()">Cancelar</button>
+          <button mat-raised-button color="primary" mat-raised-button [disabled]="formProduct.invalid" (click)="insertarProducto()" >Añadir</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

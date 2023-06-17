@@ -1,0 +1,25 @@
+mat-grid-tile {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#rec-1{
+    background-color:#5800FF;
+}
+
+#rec-2{
+background-color: #F8F8F8;
+}
+
+#img_logo{
+width: 90%;
+height:auto;
+}
+
+.container-fluid{
+    padding: 0;
+    display: grid;
+    height: 100vh;
+}

@@ -1,0 +1,194 @@
+<div class="container-fluid">
+  <div class="row g-0">
+    <div class="col d-flex justify-content-center align-items-center px-5" id="rec-1">
+      <img class="img-fluid" id="img_logo" src="../../../assets/img/markat.jpg" alt="logo" />
+    </div>
+
+    <div class="col px-5" id="rec-2">
+      <div class="px-5">
+        <h2 class="text-left py-5">Registro</h2>
+
+        <form [formGroup]="myForm">
+
+          <mat-form-field appearance="standard" class="w-50 mb-4">
+            <mat-label class="font-lighter">Ciudad</mat-label>
+            <input matInput formControlName="city" placeholder="Ciudad" />
+          </mat-form-field>
+          <br />
+
+          <div *ngIf="(myForm.get('ownerName')?.hasError('required') && myForm.get('ownerName')?.touched)">
+            <span class="text-danger">*Campo obligatorio</span>
+          </div>
+
+          <mat-form-field appearance="standard" class="w-50 mb-0">
+            <mat-label class="font-lighter">Nombre de negocio</mat-label>
+            <input matInput formControlName="storeName" placeholder="Ingrese el nombre de su negocio" />
+          </mat-form-field>
+          <br />
+
+          <div *ngIf="(myForm.get('ownerName')?.hasError('required') && myForm.get('ownerName')?.touched)">
+            <span class="text-danger">*Campo obligatorio</span>
+          </div>
+
+          <mat-form-field appearance="standard" class="w-50 mb-0">
+            <mat-label class="font-lighter">RUC</mat-label>
+            <input matInput formControlName="noRuc" placeholder="Ingrese RUC de su negocio" />
+          </mat-form-field>
+          <br />
+
+          <div *ngIf="(myForm.get('noRuc')?.hasError('required') && myForm.get('noRuc')?.touched)">
+            <span class="text-danger">*Campo obligatorio</span>
+          </div>
+
+          <div *ngIf="(myForm.get('noRuc')?.hasError('maxlength') && myForm.get('noRuc')?.touched)">
+            <span class="text-danger">El numero debe tener 11 dígitos</span>
+          </div>
+
+          <div *ngIf="(myForm.get('noRuc')?.hasError('minlength') && myForm.get('noRuc')?.touched)">
+            <span class="text-danger">El numero debe tener 11 dígitos</span>
+          </div>
+
+          <mat-form-field appearance="standard" class="w-50 mb-0">
+            <mat-label class="font-lighter">Nombre</mat-label>
+            <input matInput formControlName="ownerName" placeholder="Ingrese su nombre" />
+          </mat-form-field>
+          <br />
+
+          <div *ngIf="(myForm.get('ownerName')?.hasError('required') && myForm.get('ownerName')?.touched)">
+            <span class="text-danger">*Campo obligatorio</span>
+          </div>
+
+          <mat-form-field appearance="standard" class="w-50 mb-0">
+            <mat-label class="font-lighter">Apellidos</mat-label>
+            <input matInput formControlName="ownerLastName" placeholder="Ingrese sus apellidos" />
+          </mat-form-field>
+          <br />
+
+          <div *ngIf="(myForm.get('ownerLastName')?.hasError('required') && myForm.get('ownerLastName')?.touched)">
+            <span class="text-danger">*Campo obligatorio</span>
+          </div>
+
+          <mat-form-field appearance="standard" class="w-50 mb-0">
+            <mat-label class="font-lighter">DNI</mat-label>
+            <input matInput formControlName="ownerDni" placeholder="Ingrese su DNI" />
+          </mat-form-field>
+          <br />
+
+          <div *ngIf="(myForm.get('ownerDni')?.hasError('required') && myForm.get('ownerDni')?.touched)">
+            <span class="text-danger">*Campo obligatorio</span>
+          </div>
+
+          <div *ngIf="(myForm.get('ownerDni')?.hasError('maxlength') && myForm.get('ownerDni')?.touched)">
+            <span class="text-danger">El numero debe tener 8 dígitos</span>
+          </div>
+
+          <div *ngIf="(myForm.get('ownerDni')?.hasError('minlength') && myForm.get('ownerDni')?.touched)">
+            <span class="text-danger">El numero debe tener 8 dígitos</span>
+          </div>
+
+          <mat-form-field appearance="standard" class="w-50 mb-0">
+            <mat-label class="font-lighter">Foto de Perfil</mat-label>
+            <input matInput formControlName="ownerPhoto" placeholder="Ingrese foto de perfil" />
+          </mat-form-field>
+          <br />
+
+          <div *ngIf="(myForm.get('ownerPhoto')?.hasError('required') && myForm.get('ownerPhoto')?.touched)">
+            <span class="text-danger">*Campo obligatorio</span>
+          </div>
+
+          <mat-form-field appearance="standard" class="w-50 mb-0">
+            <mat-label class="font-lighter">Teléfono</mat-label>
+            <input matInput formControlName="noPhone" placeholder="Teléfono" />
+          </mat-form-field>
+          <br />
+
+          <div *ngIf="(myForm.get('noPhone')?.hasError('required') && myForm.get('noPhone')?.touched)">
+            <span class="text-danger">*Campo obligatorio</span>
+          </div>
+
+          <div *ngIf="(myForm.get('noPhone')?.hasError('maxlength') && myForm.get('noPhone')?.touched)">
+            <span class="text-danger">*El numero debe tener 9 dígitos</span>
+          </div>
+
+
+          <div *ngIf="(myForm.get('noPhone')?.hasError('minlength') && myForm.get('noPhone')?.touched)">
+            <span class="text-danger">*El numero debe tener 9 dígitos</span>
+          </div>
+
+
+          <mat-form-field appearance="standard" class="w-50 mb-0">
+            <mat-label class="font-lighter">Email</mat-label>
+            <input matInput formControlName="email" placeholder="Email" />
+          </mat-form-field>
+          <br />
+
+          <div *ngIf="(myForm.get('email')?.hasError('required') && myForm.get('email')?.touched)  ||
+          (myForm.get('Telefono')?.hasError('required') && myForm.get('Telefono')?.touched)">
+            <span class="text-danger">*Campo obligatorio</span>
+          </div>
+          <div *ngIf="myForm.get('email')?.hasError('email') && myForm.get('email')?.touched">
+            <span class="text-danger"> Ingrese un email válido</span>
+          </div>
+
+
+          <mat-form-field appearance="standard" class="w-50 mb-0">
+            <mat-label class="font-lighter">Contraseña</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" matInput formControlName="password"
+              placeholder="Contraseña" />
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          <br />
+
+          <div *ngIf="(myForm.get('password')?.hasError('required') && myForm.get('password')?.touched)">
+            <span class="text-danger">*Campo obligatorio</span>
+          </div>
+          
+          <div *ngIf="(myForm.get('password')?.hasError('minlength') && myForm.get('password')?.touched)">
+            <span class="text-danger">*La contraseña debe tener minimo 8 caracteristicas</span>
+          </div>
+
+          <div *ngIf="!esValido" class="alert alert-danger" role="alert">
+            Ya existe un usuario con este correo.
+          </div>
+
+          <div class="text-end w-50">
+            <button mat-raised-button id="btn-ingresar" mat-raised-button [disabled]="myForm.invalid"
+              class="font-lighter w-50" (click)="addStore()">
+              Listo
+            </button>
+          </div>
+
+
+        </form>
+
+        <br /><br />
+
+        <div class="row lign-items-end">
+          <div class="col">
+            <p class="d-inline-block mb-0 text-primary font-300">
+              ¿No tienes una cuenta?
+            </p>
+            <a class="font-weight-bold text-decoration-none font-700" routerLink="/login">
+              Indentificarse</a>
+          </div>
+          <div class="py-2 mb-0">
+            <p class="d-inline-block mb-0 font-300 text-primary">
+              ¿Olvidaste tu contraseña?
+            </p>
+            <a class="font-weight-bold text-decoration-none font-700" routerLink="/recover-pw">
+              Recuperar mi contraseña</a>
+          </div>
+
+          <div class="py-2 mb-0">
+            <p class="d-inline-block mb-0 font-300 text-secondary">
+              © copyright 2022 | Todos los derechos reservados por Markat, Inc.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
